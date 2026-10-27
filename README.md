@@ -37,7 +37,17 @@ npm run test:standalone
 npm run preview
 ```
 
-The production build writes `dist/` and a self-contained `AI-Accessibility-Route-Advisor.html`. Open the standalone file in a modern browser, or serve `dist/` over HTTP. Generated files and dependencies are excluded from Git.
+The production build writes `dist/` and a self-contained `AI-Accessibility-Route-Advisor.html`. Open the standalone file in a modern browser, or serve `dist/` over HTTP. Dependencies and intermediate build files are excluded from Git; the generated Pages build in `docs/` is committed for hosting.
+
+## Publish on GitHub Pages
+
+The repository includes a self-contained production website at `docs/index.html`. Its scripts, styles and icon are embedded, so it works under the repository's Pages subpath without asset path configuration.
+
+The repository owner must open **Settings → Pages**, select **Deploy from a branch**, choose **main** and **/docs**, and save. GitHub Pages is not activated by adding these files alone. Once GitHub reports a successful deployment, the expected address is:
+
+https://chetanabonde6-dotcom.github.io/ai-accessibility-route-advisor/
+
+For future changes, run `npm run build:pages` and commit the updated `docs/` together with the source. This builds the application, runs the standalone interaction smoke check, and refreshes the Pages files. The separate AppDeploy website is not updated by this command.
 
 ## Important data boundaries
 

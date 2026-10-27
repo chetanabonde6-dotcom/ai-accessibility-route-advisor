@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@source not "../docs";
 @theme {
   --color-ink: #08090d;
   --color-panel: #11131b;
